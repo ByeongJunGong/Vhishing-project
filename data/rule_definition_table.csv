@@ -1,0 +1,91 @@
+﻿pattern,frequency,rule_type,default_score
+지금,3471,keyword,10
+본인,3224,keyword,10
+저희,2460,keyword,10
+이제,2119,keyword,10
+고객,2056,keyword,10
+통장,1941,keyword,10
+말씀,1500,keyword,10
+확인,1476,keyword,10
+계좌,1332,keyword,10
+부분,1305,keyword,10
+때문,1274,keyword,10
+은행,1228,keyword,10
+사건,1170,keyword,10
+일단,1134,keyword,10
+전화,1035,keyword,10
+금융,1028,keyword,10
+진행,976,keyword,10
+연락,915,keyword,10
+사용,898,keyword,10
+대해,856,keyword,10
+처리,795,keyword,10
+혹시,723,keyword,10
+대출,698,keyword,10
+가지,675,keyword,10
+자금,674,keyword,10
+정도,672,keyword,10
+번호,669,keyword,10
+조사,654,keyword,10
+카드,652,keyword,10
+명의,651,keyword,10
+본인 명의,253,pattern,10
+부분 대해,205,pattern,10
+명의 도용,204,pattern,10
+금융 감독,182,pattern,10
+이번 사건,179,pattern,10
+개인정보 유출,177,pattern,10
+농협 은행,176,pattern,10
+개인 정보,170,pattern,10
+본인 직접,161,pattern,10
+저희 이제,159,pattern,10
+지금 지금,158,pattern,10
+다시 한번,156,pattern,10
+통장 개설,152,pattern,10
+계좌 번호,151,pattern,10
+계좌 추적,150,pattern,10
+동결 처리,144,pattern,10
+지금 본인,142,pattern,10
+피해자 입증,140,pattern,10
+이기 때문,138,pattern,10
+확인 연락,134,pattern,10
+사건 번호,133,pattern,10
+이제 본인,132,pattern,10
+지금 저희,113,pattern,10
+은행 통장,110,pattern,10
+마이너스 통장,110,pattern,10
+저희 지금,107,pattern,10
+고객 지금,105,pattern,10
+본인 통장,103,pattern,10
+때문 본인,101,pattern,10
+증거 자료,101,pattern,10
+개인 정보 유출,69,pattern,10
+명의 도용 사건,64,pattern,10
+본인 명의 통장,54,pattern,10
+명의 도용 피해자,44,pattern,10
+본인 개인 정보,43,pattern,10
+서울 지방 경찰청,41,pattern,10
+보안 계좌 코드,41,pattern,10
+국가 안전 보안,41,pattern,10
+경기도 광명시 철산동,40,pattern,10
+안전 보안 계좌,39,pattern,10
+은행 하나 은행,32,pattern,10
+금융 범죄 기단,30,pattern,10
+하나 은행 통장,30,pattern,10
+본인 직접 개설,30,pattern,10
+재산 보험 신청서,29,pattern,10
+부분 이기 때문,28,pattern,10
+범죄 기단 검거,27,pattern,10
+공무 집행 방해,27,pattern,10
+첨단 범죄 수사,27,pattern,10
+다시 한번 말씀,26,pattern,10
+본인 피해자 입증,26,pattern,10
+전라도 광주 출신,25,pattern,10
+본인 개인정보 유출,25,pattern,10
+유출 명의 도용,25,pattern,10
+본인 명의 농협,23,pattern,10
+자산 관리 공사,23,pattern,10
+마이너스 통장 발급,22,pattern,10
+중도 상환 수수료,22,pattern,10
+사건 내용 대해,22,pattern,10
+가지 확인 연락,21,pattern,10
