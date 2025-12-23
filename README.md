@@ -30,23 +30,22 @@ STT 기반 음성 파일(mp4/wav) 처리
 실험 결과 자동 저장 (CSV / PNG)
 
 3. git 폴더 구조
-4. 
+ 
 Vhishing-project/
-├── audio_utils.py              # 분석용 오디오 조각 생성
-├── best.pt                     # 보이스피싱 탐지용 학습 모델
-├── predict.py                  # 하이브리드 탐지 모델(NLP + Rule base)
-├── rule_definition_table2.csv  # 규칙 기반 탐지 용 규칙 테이블
-├── smishing_datam model.txt    # 스미싱 탐지용 모델, 데이터 구글 드라이브 링크
-├── smishing_data_preprocess.py # 스미싱 데이터 전처리
-├── sms.py                      # 스미싱(텍스트) 탐지 및 sms 발송
-├── stt.py                      # 음성 → Text 변환(whisper)
-├── test.mp4                    # 보이스피싱 탐지 시뮬레이션 용 파일(출처: 금융감독원)
-├── vishing_live.py             # 보이스피싱 탐지 메인 코드(streamlit 대시보드)
-├── visualization.py            # 결과 시각화
-│
-└── data/                       # 보이스피싱 학습·실험 데이터 (CSV)
+＊audio_utils.py              # 분석용 오디오 조각 생성
+＊best.pt                     # 보이스피싱 탐지용 학습 모델
+＊predict.py                  # 하이브리드 탐지 모델(NLP + Rule base)
+＊rule_definition_table2.csv  # 규칙 기반 탐지 용 규칙 테이블
+＊smishing_datam model.txt    # 스미싱 탐지용 모델, 데이터 구글 드라이브 링크
+＊smishing_data_preprocess.py # 스미싱 데이터 전처리
+＊sms.py                      # 스미싱(텍스트) 탐지 및 sms 발송
+＊stt.py                      # 음성 → Text 변환(whisper)
+＊test.mp4                    # 보이스피싱 탐지 시뮬레이션 용 파일(출처: 금융감독원)
+＊vishing_live.py             # 보이스피싱 탐지 메인 코드(streamlit 대시보드)
+＊visualization.py            # 결과 시각화
+＊data/                       # 보이스피싱 학습·실험 데이터 (CSV)
 
-6. 사용 기술 스택
+4. 사용 기술 스택
 
 Language: Python 3.10
 
@@ -104,9 +103,11 @@ CSV 기반 정량 성능 지표
 
 모든 결과는 실행 시 자동으로 vishing_predictions/에 저장됩니다.
 
-7. 프로젝트 특징 (포트폴리오 포인트)
+7. 프로젝트 특징
 
 단순 분류가 아닌 Hybrid 탐지 구조 설계
+
+음성 입력(STT) 
 
 다양한 한국어(보이스피싱)/영어(스미싱) 언어모델 비교 실험
 
