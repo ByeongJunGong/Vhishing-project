@@ -59,12 +59,6 @@ Vhishing-project/
 - PyTorch
 
 - Transformer-based Language Models (Hugging Face Transformers)
--BERT/n
--DistilBERT
--RoBERTa
--ELECTRA
--DeBERTa-v3-small
--KoBERT / KC-BERT / KLUE-BERT (Korean-specific models)
 
 - Speech
 
