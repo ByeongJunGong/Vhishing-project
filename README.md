@@ -17,19 +17,18 @@ AI 기반 보이스피싱·스미싱 탐지 시스템
 
 **2. 주요 기능**
 
-문자/음성 텍스트 기반 피싱 탐지
+- 문자/음성 텍스트 기반 피싱 탐지
 
-한국어: KoBERT / KC-BERT / KLUE-BERT / ELECTRA 
-영어: Distillbert/Bert/RoBERTa/Electra/Deberta-v3-small
+- 한국어: KoBERT / KC-BERT / KLUE-BERT / ELECTRA , 영어: Distillbert/Bert/RoBERTa/Electra/Deberta-v3-small
 등 다중 모델 비교
 
-딥러닝 + Rule-based Hybrid 예측
+- 딥러닝 + Rule-based Hybrid 예측
 
-STT 기반 음성 파일(mp4/wav) 처리
+- STT 기반 음성 파일(mp4/wav) 처리
 
-위험도 분포, 상위 위험 문장, 패턴 통계 시각화
+- 위험도 분포, 상위 위험 문장, 패턴 통계 시각화
 
-실험 결과 자동 저장 (CSV / PNG)
+- 실험 결과 자동 저장 (CSV / PNG)
 
 
 
@@ -53,11 +52,11 @@ Vhishing-project/
 
 **4. 사용 기술 스택**
 
-Language: Python 3.10
+- Language: Python 3.10
 
-NLP / DL
+- NLP / DL
 
-PyTorch
+- PyTorch
 
 Transformer-based Language Models (Hugging Face Transformers)
   - BERT
@@ -67,81 +66,83 @@ Transformer-based Language Models (Hugging Face Transformers)
   - DeBERTa-v3-small
   - KoBERT / KC-BERT / KLUE-BERT (Korean-specific models)
 
-Speech
+- Speech
 
-STT 기반 음성 텍스트 변환
+- STT 기반 음성 텍스트 변환
 
-Data / Visualization
+- Data / Visualization
 
-Pandas, NumPy
+- Pandas, NumPy
 
-Matplotlib
+- Matplotlib
 
-Version Control
+- Version Control
 
-Git / GitHub
+- Git / GitHub
 
-Git LFS (대용량 데이터 관리)
+- Git LFS (대용량 데이터 관리)
 
 
 
 **5. 실행 방법**
 
-환경 설정
+- 환경 설정
 pip install -r requirements.txt
 
-음성 파일 기반 탐지
-streamlit run vishing_live.py
+- 음성 파일 기반 탐지
+  streamlit run vishing_live.py
 
-mp4 / wav 파일 입력
+- mp4 / wav 파일 입력
 
-STT → 텍스트 변환 → 피싱 위험도 예측
+- STT → 텍스트 변환 → 피싱 위험도 예측
 
 
 
 **6. 결과 예시**
 
-위험도 히스토그램
+- 위험도 히스토그램
 
-위험 수준 비율 파이차트
+- 위험 수준 비율 파이차트
 
-Hybrid 점수 분포
+- Hybrid 점수 분포
 
-Top-5 위험 문장
-CSV 기반 정량 성능 지표
+- Top-5 위험 문장
+- CSV 기반 정량 성능 지표
 
-모든 결과는 실행 시 자동으로 vishing_predictions/에 저장됩니다.
+- 모든 결과는 실행 시 자동으로 vishing_predictions/에 저장됩니다.
 
 
 
 **7. 프로젝트 특징**
 
-단순 분류가 아닌 Hybrid 탐지 구조 설계
+- 단순 분류가 아닌 Hybrid 탐지 구조 설계
 
-STT 기반 음성 텍스트 변환
+- 문자·음성 멀티모달 입력 처리
 
-다양한 한국어(보이스피싱)/영어(스미싱) 언어모델 비교 실험
+- STT 기반 음성 텍스트 변환
 
-실험 재현 가능한 결과 자동 저장 구조
+- 다양한 한국어(보이스피싱)/영어(스미싱) 언어모델 비교 실험
 
-연구/논문/실서비스 확장 가능 구조
+- 실험 재현 가능한 결과 자동 저장 구조
+
+- 연구/논문/실서비스 확장 가능 구조
 
 
 
 **8. 참고 사항**
 
-일부 대용량 데이터 및 모델 파일은 Git LFS와 구글 드라이브(외부 링크)로 관리됩니다.
+- 일부 대용량 데이터 및 모델 파일은 Git LFS와 구글 드라이브(외부 링크)로 관리됩니다.
 
-본 프로젝트는 연구 및 학습 목적으로 제작되었습니다.
+- 본 프로젝트는 연구 및 학습 목적으로 제작되었습니다.
 
 
 
 **9. Author**
 
-이름: 공병준
+- 이름: 공병준
 
-분야: AI / NLP / 사용자 특화
+- 분야: AI / NLP / 사용자 특화
 
-관심 주제: 자연어 처리, 멀티모달 AI, 비전
+- 관심 주제: 자연어 처리, 멀티모달 AI, 비전
 
-프로젝트 논문: 자연어처리 기반 지능형 피싱 탐지 및 경보 시스템 개발(공학 석사 학위 논문)
+- 프로젝트 논문: 자연어처리 기반 지능형 피싱 탐지 및 경보 시스템 개발(공학 석사 학위 논문)
