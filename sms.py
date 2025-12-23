@@ -17,7 +17,7 @@ txt_file = "smstest.txt"
 with open(txt_file, "r", encoding="utf-8") as f:
     lines = [line.strip() for line in f.readlines() if line.strip()]
 
-print(f"✅ {len(lines)}개의 문장을 읽었습니다.")
+print(f"{len(lines)}개의 문장을 읽었습니다.")
 
 def predict_smishing(texts):
     encodings = tokenizer(texts, return_tensors="pt", padding=True, truncation=True, max_length=128)
@@ -72,3 +72,4 @@ if len(smishing_texts) > 0:
         print(f"문자 발송 실패: {e}")
     else:
         print("스미싱 문장이 없어서 발송할 메시지가 없습니다.")
+
