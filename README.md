@@ -36,18 +36,18 @@ STT 기반 음성 파일(mp4/wav) 처리
 **3. git 폴더 구조**
  
 Vhishing-project/
-＊audio_utils.py              # 분석용 오디오 조각 생성
-＊best.pt                     # 보이스피싱 탐지용 학습 모델
-＊predict.py                  # 하이브리드 탐지 모델(NLP + Rule base)
-＊rule_definition_table2.csv  # 규칙 기반 탐지 용 규칙 테이블
-＊smishing_datam model.txt    # 스미싱 탐지용 모델, 데이터 구글 드라이브 링크
-＊smishing_data_preprocess.py # 스미싱 데이터 전처리
-＊sms.py                      # 스미싱(텍스트) 탐지 및 sms 발송
-＊stt.py                      # 음성 → Text 변환(whisper)
-＊test.mp4                    # 보이스피싱 탐지 시뮬레이션 용 파일(출처: 금융감독원)
-＊vishing_live.py             # 보이스피싱 탐지 메인 코드(streamlit 대시보드)
-＊visualization.py            # 결과 시각화
-＊data/                       # 보이스피싱 학습·실험 데이터 (CSV)
+ -audio_utils.py              # 분석용 오디오 조각 생성
+ -best.pt                     # 보이스피싱 탐지용 학습 모델
+ -predict.py                  # 하이브리드 탐지 모델(NLP + Rule base)
+ -rule_definition_table2.csv  # 규칙 기반 탐지 용 규칙 테이블
+ -smishing_datam model.txt    # 스미싱 탐지용 모델, 데이터 구글 드라이브 링크
+ -smishing_data_preprocess.py # 스미싱 데이터 전처리
+ -sms.py                      # 스미싱(텍스트) 탐지 및 sms 발송
+ -stt.py                      # 음성 → Text 변환(whisper)
+ -test.mp4                    # 보이스피싱 탐지 시뮬레이션 용 파일(출처: 금융감독원)
+ -vishing_live.py             # 보이스피싱 탐지 메인 코드(streamlit 대시보드)
+ -visualization.py            # 결과 시각화
+ -data/                       # 보이스피싱 학습·실험 데이터 (CSV)
 
 
 
