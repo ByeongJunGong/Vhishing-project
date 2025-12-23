@@ -37,6 +37,7 @@ AI 기반 보이스피싱·스미싱 탐지 시스템
 Vhishing-project/
  - audio_utils.py                # 분석용 오디오 조각 생성
  - best.pt                       # 보이스피싱 탐지용 학습 모델
+ - multi_detect.py               # 피싱 통합 탐지 모델
  - predict.py                    # 하이브리드 탐지 모델(NLP + Rule base)
  - rule_definition_table2.csv    # 규칙 기반 탐지 용 규칙 테이블
  - smishing_datam model.txt      # 스미싱 탐지용 모델, 데이터 구글 드라이브 링크
@@ -81,14 +82,13 @@ Vhishing-project/
 **5. 실행 방법**
 
 - 환경 설정
-pip install -r requirements.txt
+"pip install -r requirements.txt"
 
-- 음성 파일 기반 탐지
-  streamlit run vishing_live.py
+- 피싱 통합 탐지
+  "streamlit run  streamlit run multi_detect.py"
 
-- mp4 / wav 파일 입력
-
-- STT → 텍스트 변환 → 피싱 위험도 예측
+- mp4 / wav 입력 → 음성 입력을 텍스트로 변환 후 보이스피싱 위험 확률 예측
+- txt 입력 → 스미싱 위험 확률 예측
 
 
 
@@ -96,7 +96,10 @@ pip install -r requirements.txt
 
 - 위험도 히스토그램
 
-- 위험 수준 비율 파이차트
+- 위험 수준 비율 파이
+
+- txt 파일 입력
+- 스미싱 위험도 예측차트
 
 - Hybrid 점수 분포
 
