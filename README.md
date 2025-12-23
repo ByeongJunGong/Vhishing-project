@@ -54,7 +54,6 @@ NLP / DL
 PyTorch
 
 Transformer-based Language Models (Hugging Face Transformers)
-We conducted comparative experiments using various Transformer-based models:
   - BERT
   - DistilBERT
   - RoBERTa
