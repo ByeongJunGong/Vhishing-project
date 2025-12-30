@@ -10,7 +10,7 @@ from stt import transcribe_with_segments
 from predict import analyze_text, analyze_all_and_save
 from visualization import draw_pie_chart, draw_histogram
 
-from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
+from transformers import RobertaTokenizer, RobertaForSequenceClassification
 from solapi import SolapiMessageService
 from solapi.model import RequestMessage
 
@@ -146,8 +146,8 @@ elif uploaded_file and file_ext == "txt":
     model_dir = "./smishing_model/test"
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    model = DistilBertForSequenceClassification.from_pretrained(model_dir).to(device)
-    tokenizer = DistilBertTokenizer.from_pretrained(model_dir)
+    model = RobertaForSequenceClassification.from_pretrained(model_dir).to(device)
+    tokenizer = RobertaTokenizer.from_pretrained(model_dir)
     model.eval()
 
     def predict(texts):
