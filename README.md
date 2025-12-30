@@ -88,7 +88,7 @@ Vhishing-project/
 "pip install -r requirements.txt"
 
 - 피싱 통합 탐지
-  "streamlit run multi_detect.py"
+  "streamlit run multi_detect.py --server.fileWatcherType none"
 
 - mp4 / wav 입력 → 음성 입력을 텍스트로 변환 후 보이스피싱 위험 확률 예측
 - txt 입력 → 스미싱 위험 확률 예측
