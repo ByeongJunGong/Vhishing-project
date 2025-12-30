@@ -1,13 +1,13 @@
 import torch
 import pandas as pd
-from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
+from transformers import RobertaTokenizer, RobertaForSequenceClassification
 from solapi import SolapiMessageService
 from solapi.model import RequestMessage
 
 
 model_dir = "./smishing_model/test" 
-model = DistilBertForSequenceClassification.from_pretrained(model_dir)
-tokenizer = DistilBertTokenizer.from_pretrained(model_dir)
+model = RobertaForSequenceClassification.from_pretrained(model_dir).to(device)
+tokenizer = RobertaTokenizer.from_pretrained(model_dir)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
@@ -72,4 +72,5 @@ if len(smishing_texts) > 0:
         print(f"문자 발송 실패: {e}")
     else:
         print("스미싱 문장이 없어서 발송할 메시지가 없습니다.")
+
 
