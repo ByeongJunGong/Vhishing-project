@@ -1,3 +1,5 @@
+**#현재 에러 수정 중에 있습니다**
+
 AI 기반 보이스피싱·스미싱 탐지 시스템
 
 (Hybrid NLP + Rule-based + STT Pipeline)
