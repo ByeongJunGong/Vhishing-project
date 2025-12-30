@@ -13,9 +13,10 @@ AI 기반 보이스피싱·스미싱 탐지 시스템
 
 위험도 예측, 통계 분석, 시각화까지 포함한 End-to-End 파이프라인을 구현했습니다.
 
+- 시스템 구조
 <img width="696" height="550" alt="image" src="https://github.com/user-attachments/assets/160a1d4d-9322-4754-8554-053af95f843c" />
 
-
+- 결과 예시
 ![2025-12-30 11-52-10](https://github.com/user-attachments/assets/1cea0819-a5da-4570-a513-785bcec66cec)
 
 
