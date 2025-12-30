@@ -18,11 +18,11 @@ if os.path.exists(font_path):
     font_prop = fm.FontProperties(fname=font_path)
     matplotlib.rc("font", family=font_prop.get_name())
 else:
-    print("⚠️ 한글 폰트 파일을 찾을 수 없습니다.")
+    print("한글 폰트 파일을 찾을 수 없습니다.")
 
 # 페이지 설정
 st.set_page_config(page_title="보이스피싱 탐지", layout="wide")
-st.title("📞 실시간 보이스피싱 탐지 상황")
+st.title("실시간 보이스피싱 탐지 상황")
 
 # 환경 변수 및 세션 초기화
 API_KEY = "Api_key"
@@ -56,7 +56,7 @@ if st.session_state.file_uploaded:
     segments = transcribe_with_segments(audio_path)
 
     status_placeholder = st.empty()
-    status_placeholder.success("📝 통화 감지. 보이스피싱 탐지 시작...")
+    status_placeholder.success("통화 감지. 보이스피싱 탐지 시작...")
     time.sleep(5)
 
     spinner_html = """
@@ -109,11 +109,11 @@ if st.session_state.file_uploaded:
             with alert_area.container():
                 col1, col2 = st.columns([5, 1])
                 with col1:
-                    st.error(f"🚨 보이스피싱 위험 문장 비율 {danger_ratio:.1%} 초과! 정상 통화일 경우 '정상 통화입니다.' 클릭")
+                    st.error(f"보이스피싱 위험 문장 비율 {danger_ratio:.1%} 초과! 정상 통화일 경우 '정상 통화입니다.' 클릭")
                 with col2:
                     if st.button("정상 통화입니다", key=f"confirm_btn_once_{i}"):
                         st.session_state.confirmed = True
-                        alert_area.success("🔐 사용자가 확인했습니다.")
+                        alert_area.success("사용자가 확인했습니다.")
 
             if not sent_sms and len(top_dangerous_sentences) > 0:
                 summary_text = "\n".join([f"{j+1}. {s['text']}" for j, s in enumerate(top_dangerous_sentences)])
@@ -126,16 +126,16 @@ if st.session_state.file_uploaded:
                         text=sms_content
                     )
                     service.send(message)
-                    st.warning("📤 보이스피싱 의심 경고 문자가 발송되었습니다.")
+                    st.warning("보이스피싱 의심 경고 문자가 발송되었습니다.")
                     sent_sms = True
                 except Exception as e:
-                    st.error(f"❌ 문자 발송 실패: {str(e)}")
+                    st.error(f"문자 발송 실패: {str(e)}")
         elif st.session_state.confirmed:
-            alert_area.success("🔐 사용자가 이미 확인했습니다.")
+            alert_area.success("사용자가 이미 확인했습니다.")
         elif danger_ratio < 0.05:
             alert_area.empty()
         else:
-            alert_area.info(f"⚠️ 현재 위험 문장 비율: {danger_ratio:.1%}")
+            alert_area.info(f"현재 위험 문장 비율: {danger_ratio:.1%}")
 
         # 문장 출력
         with sentence_area.container():
@@ -155,17 +155,17 @@ if st.session_state.file_uploaded:
                 fig1 = draw_pie_chart(danger_count, suspicious_count, total_count, figsize=(1.5, 2.5), fontsize=8)
                 st.pyplot(fig1)
             with col_right:
-                st.markdown("#### 📊 위험 점수 분포")
+                st.markdown("#### 위험 점수 분포")
                 fig2 = draw_histogram([r['hybrid_score'] for r in results], figsize=(3.5, 2), fontsize=8)
                 st.pyplot(fig2)
 
         time.sleep(max(len(text) * 0.1, 2.5))
 
     df, top5, risk_ratio, charts, pattern_counter_df = analyze_all_and_save(results, pattern_counter)
-    status_placeholder.success("✅ 통화 및 보이스피싱 탐지 종료.")
-    st.success(f"💾 결과 저장 완료: vishing_predictions/result_*.csv")
+    status_placeholder.success("통화 및 보이스피싱 탐지 종료.")
+    st.success(f"결과 저장 완료: vishing_predictions/result_*.csv")
 
-    st.subheader("🔥 최종 Top 5 위험 문장")
+    st.subheader("최종 Top 5 위험 문장")
     if top5 is not None and len(top5) > 0:
         for idx, row in top5.iterrows():
             st.markdown(f"**{idx+1}.** {row['text']}")
