@@ -55,7 +55,7 @@ def calculate_rule_score(text, rule_table):
             matched_patterns.append(pattern)
     return score, matched_patterns
 
-def calculate_hybrid_score(nlp_prob, rule_score, rule_score_max=50, weight_nlp=0.7, weight_rule=0.3):
+def calculate_hybrid_score(nlp_prob, rule_score, rule_score_max=50, weight_nlp=0.8, weight_rule=0.2):
     rule_score_norm = min(rule_score / rule_score_max, 1.0)
     return (weight_nlp * nlp_prob) + (weight_rule * rule_score_norm)
 
