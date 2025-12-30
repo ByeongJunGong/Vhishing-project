@@ -1,13 +1,14 @@
 import torch
 import pandas as pd
-from transformers import RobertaTokenizer, RobertaForSequenceClassification
+from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
 from solapi import SolapiMessageService
 from solapi.model import RequestMessage
 
 
 model_dir = "./smishing_model/test" 
-model = RobertaForSequenceClassification.from_pretrained(model_dir).to(device)
-tokenizer = RobertaTokenizer.from_pretrained(model_dir)
+model = DistilBertForSequenceClassification.from_pretrained(model_dir).to(device)
+tokenizer = DistilBertTokenizer.from_pretrained(model_dir)
+
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
