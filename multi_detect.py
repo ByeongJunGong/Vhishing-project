@@ -31,7 +31,7 @@ if os.path.exists(font_path):
     matplotlib.rc("font", family=font_prop.get_name())
 
 st.set_page_config(page_title="피싱 자동 탐지 시스템", layout="wide")
-st.title("📡 보이스피싱 · 스미싱 자동 탐지 시스템")
+st.title("보이스피싱 · 스미싱 자동 탐지 시스템")
 
 if "confirmed" not in st.session_state:
     st.session_state.confirmed = False
@@ -53,12 +53,12 @@ if uploaded_file and file_ext == "mp4":
     with open(audio_path, "wb") as f:
         f.write(uploaded_file.read())
 
-    st.success("📞 통화 파일 감지 → 보이스피싱 탐지 시작")
+    st.success("통화 파일 감지 → 보이스피싱 탐지 시작")
 
     segments = transcribe_with_segments(audio_path)
 
     status_placeholder = st.empty()
-    status_placeholder.success("📝 통화 감지. 보이스피싱 탐지 시작...")
+    status_placeholder.success("통화 감지. 보이스피싱 탐지 시작...")
     time.sleep(3)
 
     results = []
@@ -100,7 +100,7 @@ if uploaded_file and file_ext == "mp4":
 
         if total_count >= min_total_texts and danger_ratio >= min_risk_ratio:
             alert_area.error(
-                f"🚨 보이스피싱 위험 비율 {danger_ratio:.1%} 초과"
+                f"보이스피싱 위험 비율 {danger_ratio:.1%} 초과"
             )
 
             if ENABLE_SMS and not sent_sms:
@@ -133,12 +133,12 @@ if uploaded_file and file_ext == "mp4":
         time.sleep(1.5)
 
     analyze_all_and_save(results, pattern_counter)
-    st.success("✅ 보이스피싱 탐지 종료")
+    st.success("보이스피싱 탐지 종료")
 
 
 elif uploaded_file and file_ext == "txt":
 
-    st.success("💬 문자 파일 감지 → 스미싱 탐지 시작")
+    st.success("문자 파일 감지 → 스미싱 탐지 시작")
 
     lines = uploaded_file.read().decode("utf-8").splitlines()
     lines = [l.strip() for l in lines if l.strip()]
@@ -169,7 +169,7 @@ elif uploaded_file and file_ext == "txt":
     st.dataframe(df)
 
     if (labels == 1).any():
-        st.error("🚨 스미싱 의심 문자 탐지")
+        st.error("스미싱 의심 문자 탐지")
 
 elif uploaded_file:
-    st.error("❌ 지원하지 않는 파일 형식입니다.")
+    st.error("지원하지 않는 파일 형식입니다.")
