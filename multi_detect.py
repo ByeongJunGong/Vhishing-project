@@ -116,7 +116,7 @@ def update_statistics(
         stats.suspicious_count += 1
 
 
-def should_trigger_alert(stats: DetectionStats, config: AppConfig) -> bool:
+def trigger_alert(stats: DetectionStats, config: AppConfig) -> bool:
     return (
         stats.total_count() >= config.min_total_texts
         and stats.danger_ratio() >= config.min_risk_ratio
@@ -186,7 +186,7 @@ def process_audio_detection(uploaded_file, config: AppConfig):
 
         update_statistics(stats, result, config)
 
-        if should_trigger_alert(stats, config):
+        if trigger_alert(stats, config):
             alert_area.error(
                 f"보이스피싱 위험 비율 {stats.danger_ratio():.1%} 초과"
             )
