@@ -16,7 +16,7 @@ from transformers import (
 )
 
 from stt import transcribe_with_segments
-from predict import analyze_text, analyze_all_and_save
+from predict import analyze_text, analyze_all_and_save, load_nlp_resources
 from visualization import draw_pie_chart, draw_histogram
 
 from solapi import SolapiMessageService
@@ -54,6 +54,15 @@ class AnalysisResult:
     hybrid_score: float
     matched_patterns: List[str]
 
+    def to_dict(self):
+        return {
+            "text": self.text,
+            "nlp_probability": self.nlp_probability,
+            "rule_score": self.rule_score,
+            "matched_patterns": ", ".join(self.matched_patterns),
+            "hybrid_score": self.hybrid_score,
+            "risk_level": self.risk_level
+        }
 
 @dataclass
 class DetectionStats:
@@ -162,6 +171,11 @@ def predict_smishing(
 def process_audio_detection(uploaded_file, config: AppConfig):
     audio_path = save_uploaded_file(uploaded_file, config.upload_dir)
 
+    resources = load_nlp_resources(
+        model_path="saved_model/best.pt",
+        rule_table_path="data/rule_definition_table2.csv"
+    )
+    
     try:
         segments = transcribe_with_segments(audio_path)
     except Exception as e:
@@ -176,13 +190,16 @@ def process_audio_detection(uploaded_file, config: AppConfig):
     chart_area = st.empty()
 
     for idx, seg in enumerate(segments):
-        raw = analyze_text(seg["text"])
-        result = AnalysisResult(
-            text=seg["text"],
-            risk_level=raw["risk_level"],
-            hybrid_score=raw["hybrid_score"],
-            matched_patterns=raw["matched_patterns"].split(", ")
-        )
+        result = analyze_text(seg["text"], resources)
+        raw = {
+            "text": result.text,
+            "nlp_probability": result.nlp_probability,
+            "rule_score": result.rule_score,
+            "matched_patterns": ", ".join(result.matched_patterns),
+            "hybrid_score": result.hybrid_score,
+            "risk_level": result.risk_level
+        }
+
 
         update_statistics(stats, result, config)
 
